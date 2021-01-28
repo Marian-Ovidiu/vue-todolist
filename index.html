@@ -5,25 +5,41 @@
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noticia+Text&display=swap" rel="stylesheet">
     <title>To do list</title>
   </head>
   <body>
+    <div class="container">
+      <div id="root">
 
-    <div id="root">
-      <input @keyup.enter="add" v-model="item" type="text" placeholder="Scrivi qualcosa...">
-      <button @click="add" @click="counting" type="button" name="button">Aggiungi</button>
+        <p>To do list</p>
+        <div class="list-container">
+          <div class="top-list">
+            <input @keyup.enter="add" v-model="item" type="text" placeholder="Scrivi qualcosa...">
+            <button @click="add" @click="counting" type="button" name="button">Aggiungi</button>
+          </div>
+          <div class="list">
 
-      <ul>
-        <li v-for="i in list">{{i}}</li>
-      </ul>
+            <div class="left">
+              <ul>
+                <li v-for="i in list">
+                  <div class="item-box">{{i}}</div>
+                  <input type="checkbox" class="check" name="" value="">
+                </li>
+              </ul>
+            </div>
 
-      <div>
-        <i v-for="(element, i) in list"
-        class="far fa-times-circle"
-        @click="remove(i)"></i>
-
+            <div class="right">
+              <ul>
+                <li v-for="(element, i) in list"><i class="far fa-trash-alt" @click="remove(i)"></i></li>
+              </ul>
+            </div>
+          </div>
       </div>
 
+      </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>

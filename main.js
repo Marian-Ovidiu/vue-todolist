@@ -9,12 +9,11 @@ var app = new Vue({
     add : function(){
       this.list.push(this.item);
       this.index += 1;
-      console.log(this.list);
-      
+      this.item = '';
     },
     remove : function(newIndex){
-      this.list.splice(newIndex);
-      console.log(this.list);
+      console.log(newIndex);
+      this.list.splice(newIndex, 1);
     },
   }
 })

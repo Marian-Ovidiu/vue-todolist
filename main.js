@@ -3,22 +3,18 @@ var app = new Vue({
   data: {
     item : '',
     list: [],
-    indexArray: [],
     index: 0
   },
   methods: {
     add : function(){
       this.list.push(this.item);
       this.index += 1;
-      this.indexArray.push(this.index);
+      console.log(this.list);
+      
     },
     remove : function(newIndex){
-      this.list.forEach((item, i) => {
-        if(i === newindex){
-          this.list.splice(i);
-        }
-      });
-
+      this.list.splice(newIndex);
+      console.log(this.list);
     },
   }
 })
